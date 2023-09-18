@@ -1,0 +1,42 @@
+<div class="container-fluid min-vh-100">
+  <div class="container mt-9">
+
+       <h3>LOGIN FORM</h3>
+      <p>Write credentials in below fields and sign in your account</p>
+      <form action="" [formGroup]="loginUserData.formLoginGroup" class="form">
+          <div class="mb-3 mt-3">
+
+              <label for="loginUser" class="form-label">UserName</label>
+
+              <p style="color: red;" [hidden]="!(hasError('required','UserNameControl'))">UserName is required</p>
+
+              <input [(ngModel)]="loginUserData.EmailId" type="text" class="form-control"
+                  formControlName="UserNameControl" name="loginUser" id="loginUser" required
+                  placeholder="Please enter your User Name">
+
+          </div>
+          <div class="mb-3">
+              <label class="form-label" for="loginPassword">Password</label>
+
+              <p style="color: red;" [hidden]="!(hasError('required','PasswordControl'))">Password is required</p>
+
+              <input [(ngModel)]="loginUserData.password" type="password" class="form-control"
+                  formControlName="PasswordControl" type="password"
+                  name="loginPassword" id="loginPassword" required placeholder="Please Enter Your Password">
+
+
+          </div>
+
+
+          <button type="submit" class="btn btn-lg btn-primary" (click)="LoginUser()" value="Login">Log IN </button>
+          <br>
+          <div>
+              <p>Not a member? <a routerLink="/register">Register</a></p>
+          </div>
+      </form>
+
+
+
+
+</div>
+

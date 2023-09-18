@@ -1,0 +1,73 @@
+<div class="register-wrapper">
+  <form action="" class="form">
+    <h2>Register</h2>
+
+    <div class="input-group">
+      <input type="string" name="FullName" placeholder="Enter Your Full Name" id="fullName" [(ngModel)]="registerUserData.FullName" required />
+      <label for="registerFullName"></label>
+    </div>
+    <div class="input-group">
+      <!-- <input type="string" name="Gender" placeholder="Enter Your Gender" id="Gender" [(ngModel)]="registerUserData.Gender" required /> -->
+      <label for="Gender"></label>
+      <div class="gender-label">        <span>Enter Your Gender :</span>      </div>
+      <div class="gender-dropdown">
+        <select id="gender" name="Gender" [(ngModel)]="registerUserData.Gender" required >
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <input type="tel" name="PhoneNumber" placeholder="Enter Your Phone Number" id="phonenumber" [(ngModel)]="registerUserData.PhoneNumber" required />
+      <label for="registerPhoneNumber"></label>
+    </div>
+
+    <div class="input-group">
+      <input type="email" name="registerEmail" placeholder="Email Id" id="registerEmail" [(ngModel)]="registerUserData.EmailId" required />
+      <label for="registerEmail"></label>
+    </div>
+
+
+    <div class="input-group">
+      <input type="string" name="Address" placeholder="Enter Your Address" id="fullName" [(ngModel)]="registerUserData.Address" required />
+      <label for="registerAddress"></label>
+    </div>
+    <div class="input-group">
+      <input
+      type="password"
+      name="loginPassword"
+      id="loginPassword"
+      placeholder="Password"
+      [(ngModel)]="registerUserData.password"
+      required
+    />
+    <label for="loginPassword"></label>
+    </div>
+    <input type="submit" value="Register" class="submit-btn" (click)="registerUser()" />
+  </form>
+</div>
+
+<div *ngIf="showSpinner" id="cover-spin">
+  </div>
+<button type="button" id="btnLaunchModel" class="btn btn-primary"  style="visibility: hidden;"data-toggle="modal" data-target="#exampleModalCenter">
+
+</button>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">{{modelHeader}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{modelText}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
